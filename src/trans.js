@@ -27,6 +27,9 @@ export function trans(deckStr){
 
 
 export async function trans2(url){
+    if(!url){
+        throw new Error("请输入卡组链接")
+    }
     const res=await fetch(url)
     var str=await res.text()
     str=str.match(/__NUXT__=(.*?)<\/script>/)?.[1]

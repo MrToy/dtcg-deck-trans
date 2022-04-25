@@ -20,7 +20,7 @@ function App() {
         setYGOStr(res);
       })
       .catch((e) => {
-        console.log(e);
+        setYGOStr(e);
       });
   }, [deckStr]);
   return (
