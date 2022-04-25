@@ -15,6 +15,7 @@ function App() {
   const [deckStr, setDeckStr] = useState(defaultUrl);
   const [ygoStr, setYGOStr] = useState("");
   useEffect(() => {
+    setYGOStr("Loading...");
     trans2(deckStr)
       .then((res) => {
         setYGOStr(res);
