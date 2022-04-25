@@ -38,6 +38,8 @@ function App() {
           </p>
           <p>2. 复制卡组的浏览器链接地址到中间的输入框</p>
           <p>3. 右边的卡组代码就是YGO卡组代码了</p>
+          <h3>DTCG YGO客户端下载</h3>
+          <p><a href="https://ygoanime.com/" target="_blank">https://ygoanime.com/</a></p>
         </div>
         <textarea
           style={{ marginLeft: 20 }}
