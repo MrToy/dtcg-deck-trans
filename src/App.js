@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { trans, trans2 } from "./trans";
+import { transX } from "./trans";
 import { useState, useEffect } from "react";
 
 const defaultDeckStr = `["Exported from http://digimon.card.moe","ST3-04","ST3-04","ST3-04","ST3-04","ST3-07","ST3-07","ST3-07","ST3-12","ST3-12","ST3-12","ST3-12","BT1-063","BT1-063","BT1-052","BT1-052","BT1-087","BT1-087","BT1-087","BT1-048","BT1-048","BT1-048","BT1-048","BT1-006","BT1-006","BT1-006","BT1-006","BT1-049","BT1-049","BT1-057","BT1-057","BT1-057","BT1-057","BT2-033","BT2-033","BT2-033","BT2-033","BT2-035","BT2-035","BT2-035","BT2-035","BT2-041","BT2-041","BT2-041","BT2-087","BT2-087","BT2-087","BT2-099","BT2-038","BT2-038","BT2-038","BT2-038","BT2-039","BT2-098","BT2-098"]
@@ -16,7 +16,7 @@ function App() {
   const [ygoStr, setYGOStr] = useState("");
   useEffect(() => {
     setYGOStr("Loading...");
-    trans2(deckStr)
+    transX(deckStr)
       .then((res) => {
         setYGOStr(res);
       })
