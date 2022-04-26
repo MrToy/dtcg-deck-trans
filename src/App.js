@@ -11,16 +11,26 @@ const defaultUrl =
 
 // console.log(trans(deckStr));
 
+let idx = 0;
+
 function App() {
   const [deckStr, setDeckStr] = useState(defaultUrl);
   const [ygoStr, setYGOStr] = useState("");
   useEffect(() => {
     setYGOStr("Loading...");
+    idx++;
+    let _idx = idx;
     transX(deckStr)
       .then((res) => {
+        if (_idx < idx) {
+          return;
+        }
         setYGOStr(res);
       })
       .catch((e) => {
+        if (_idx < idx) {
+          return;
+        }
         setYGOStr(e);
       });
   }, [deckStr]);
@@ -40,7 +50,11 @@ function App() {
           <p>2. 复制卡组的浏览器链接地址到中间的输入框</p>
           <p>3. 右边的卡组代码就是YGO卡组代码了</p>
           <h3>DTCG YGO客户端下载</h3>
-          <p><a href="https://ygoanime.com/" target="_blank">https://ygoanime.com/</a></p>
+          <p>
+            <a href="https://ygoanime.com/" target="_blank">
+              https://ygoanime.com/
+            </a>
+          </p>
         </div>
         <textarea
           style={{ marginLeft: 20 }}
